@@ -1,6 +1,14 @@
 # Food api
 import requests
 
+class ScrumdittilyumptiusMeal:
+    def __init__(self, id, name, area, ingredients):
+        self.id = id
+        self.name = name
+        self.area = area
+        self.ingredients = ingredients
+        
+
 class MealDB:
     def __init__(self, endOfEndpoint):
         self.endpoint = f'https://www.themealdb.com/api/json/v1/1/{endOfEndpoint}'
