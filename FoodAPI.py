@@ -7,6 +7,8 @@ class ScrumdittilyumptiusMeal:
         self.name = name
         self.area = area
         self.ingredients = ingredients
+    def __str__(self):
+        return str(self.ingredients)
         
 
 class MealDB:
@@ -26,12 +28,7 @@ class MealDB:
     def parse_data(self, data):
         meals = data.get('meals', [])
         for meal in meals:
-            meal_info = {
-                'id': meal.get('idMeal'),
-                'name': meal.get('strMeal'),
-                'area': meal.get('strArea'),
-                'ingredients': self.get_ingredients(meal)
-            }
+            meal_info = ScrumdittilyumptiusMeal(meal.get('idMeal'), meal.get('strMeal'), meal.get('strArea'), self.get_ingredients(meal))
             self.meals.append(meal_info)
 
     def get_ingredients(self, meal):
