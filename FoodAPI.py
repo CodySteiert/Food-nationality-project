@@ -21,12 +21,7 @@ class MealDB:
             meal_info = {
                 'id': meal.get('idMeal'),
                 'name': meal.get('strMeal'),
-                'category': meal.get('strCategory'),
                 'area': meal.get('strArea'),
-                'instructions': meal.get('strInstructions'),
-                'thumbnail': meal.get('strMealThumb'),
-                'tags': meal.get('strTags'),
-                'youtube': meal.get('strYoutube'),
                 'ingredients': self.get_ingredients(meal)
             }
             self.meals.append(meal_info)
@@ -47,3 +42,4 @@ meal_db = MealDB('search.php?f=a')
 meals = meal_db.get_meals()
 for meal in meals:
     print(meal)
+    
