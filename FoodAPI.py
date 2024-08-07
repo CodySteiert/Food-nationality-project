@@ -2,8 +2,8 @@
 import requests
 
 class MealDB:
-    def __init__(self, letter):
-        self.endpoint = f'https://www.themealdb.com/api/json/v1/1/search.php?f={letter}'
+    def __init__(self, endOfEndpoint):
+        self.endpoint = f'https://www.themealdb.com/api/json/v1/1/{endOfEndpoint}'
         self.meals = []
         self.fetch_data()
 
@@ -43,7 +43,7 @@ class MealDB:
         return self.meals
 
 # Example Usage
-meal_db = MealDB('a')
+meal_db = MealDB('search.php?f=a')
 meals = meal_db.get_meals()
 for meal in meals:
     print(meal)
